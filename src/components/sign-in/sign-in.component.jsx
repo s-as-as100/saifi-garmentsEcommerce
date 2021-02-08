@@ -44,14 +44,17 @@ import { signInWithGoogle } from './../../firebase/firebase.utils';
                      label="password"
                      required 
                      />
-                     
-                     <CustomButton type="submit" > SIGN IN </CustomButton>
-                     <CustomButton  onClick= {signInWithGoogle}
-                      
+                    <div className='buttons'>
+                    <CustomButton type="submit" > SIGN IN </CustomButton>
+                     <CustomButton  onClick= {signInWithGoogle} 
+                      isGoogleSignIn
                       >
                           {''}
                            Sign in with google {' '} </CustomButton>
 
+                    </div>
+                     
+                     
                  </form>
              </div>
          )
