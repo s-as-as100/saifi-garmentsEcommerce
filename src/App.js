@@ -11,34 +11,28 @@ import { auth,createUserProfileDocument} from './firebase/firebase.utils';
 import { SetCurrentUser } from './redux/user/user.actions';
 
 class App extends React.Component {
-  constructor() {
-    super();
-
-    this.state = {
-      currentUser: null
-    };
-  }
-
+   
   unsubscribeFromAuth = null;
 
   componentDidMount() {
+    const {SetCurrentUser} = this.props;
     this.unsubscribeFromAuth = auth.onAuthStateChanged(async userAuth => {
       if (userAuth) {
         const userRef = await createUserProfileDocument(userAuth);
 
         userRef.onSnapshot(snapShot => {
-          this.setState({
-            currentUser: {
+          SetCurrentUser({
+            
               id: snapShot.id,
               ...snapShot.data()
-            }
+            
           });
 
           
         });
       }
 
-      this.setState({ currentUser: userAuth });
+     SetCurrentUser(userAuth);
     });
   }
 
