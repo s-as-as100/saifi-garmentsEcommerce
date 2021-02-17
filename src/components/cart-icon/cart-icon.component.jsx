@@ -8,7 +8,7 @@
  const CardIcon = () => (
      <div className='cart-icon'>
          <ShoppingIcon className='shopping-icon' />
-         <span className='item-count'></span>
+         <span className='item-count'>0</span>
      </div>
  );
 
