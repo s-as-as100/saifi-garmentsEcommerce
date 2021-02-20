@@ -6,7 +6,7 @@
  
 
  import './cart-icon.styles.scss'; 
- import toggleCartHidden from './../../redux/cart/cart.action';
+ import {toggleCartHidden} from './../../redux/cart/cart.action';
  
 
  const CartIcon = ({toggleCartHidden}) => (
