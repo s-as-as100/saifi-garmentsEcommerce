@@ -5,6 +5,7 @@ import * as React from "react";
 
 import { Route, Switch, Redirect } from "react-router-dom";
 import Homepage from "./pages/homepage/homepage.component";
+
 import ShopPage from "./pages/homepage/shop/shop.component";
 
 import Header from "./components/header/header.component";
